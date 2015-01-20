@@ -56,7 +56,7 @@ describe(List) do
     it ('returns an array of tasks for that list') do
       test_list = List.new({:name => "Epicodus stuff", :id => nil})
       test_list.save()
-      test_task = Task.new({:description => "Learn SQL", :list_id => test_list.id(), :due_date => "2015-01-05"})
+      test_task = Task.new({:description => "Learn SQL", :list_id => test_list.id(), :due_date => "2015-03-05"})
       test_task.save()
       test_task1 = Task.new({:description => "Learn Ruby", :list_id => test_list.id(), :due_date => "2015-01-05"})
       test_task1.save()
