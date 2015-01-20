@@ -1,0 +1,28 @@
+<h1>Add a task to <%= @list.name() %> </h1>
+
+<form action="/tasks" method="post">
+  <input id="list_id" name="list_id" type="hidden" value="<%= @list.id() %>">
+
+  <label for="description">Description of the task:</label>
+  <input id="description" name="description" type="text">
+  <label for="due_date">Duty to Do Due Date</label>
+  <input id="due_date" name="due_date" type="text">
+
+  <button type="submit">Add Task</button>
+
+</form>
+
+  <% if @list.tasks().any?() %>
+    <h3>Here are all the tasks in this list:</h3>
+
+    <ul>
+      <% @list.tasks().each() do |task| %>
+      <li><%= task.description() %><br><%= task.due_date() %></li>
+      <% end %>
+    </ul>
+
+    <% else %>
+    <p>You have no duties to do!</p>
+    <% end %>
+
+    <a href="/">Return to main page</a>
